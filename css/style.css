@@ -1,0 +1,17 @@
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { background-image: radial-gradient(circle at 85% 0%, rgba(239, 51, 64, .09), transparent 30rem); }
+code { color: #fda4af; }
+.hero-glow { background: radial-gradient(circle at 78% 42%, rgba(239, 51, 64, .17), transparent 32%), linear-gradient(135deg, #0b1224, #070b16 65%); }
+.poster-preview { aspect-ratio: 2 / 3; width: 100%; border-radius: 1rem; object-fit: cover; box-shadow: 0 24px 70px rgba(0, 0, 0, .5); }
+.section-kicker { margin-bottom: .35rem; color: #fb7185; font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; letter-spacing: -.03em; }
+.panel { border: 1px solid rgba(255,255,255,.09); border-radius: 1.25rem; background: rgba(17,28,53,.72); padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 18px 45px rgba(0,0,0,.18); }
+.empty-state { display: grid; place-items: center; align-content: center; border: 1px dashed rgba(255,255,255,.15); border-radius: 1.25rem; padding: 2rem; text-align: center; background: rgba(17,28,53,.45); }
+.empty-icon { display: grid; height: 3.5rem; width: 3.5rem; place-items: center; border-radius: 999px; background: rgba(239,51,64,.12); font-size: 1.5rem; }
+.screen { margin-inline: auto; max-width: 34rem; border-top: 4px solid rgba(255,255,255,.8); border-radius: 50%; padding-top: .8rem; text-align: center; color: #64748b; font-size: .7rem; letter-spacing: .35em; text-transform: uppercase; filter: drop-shadow(0 0 10px rgba(255,255,255,.25)); }
+.seat { display: inline-block; height: .9rem; width: 1.1rem; border-radius: .25rem .25rem .4rem .4rem; }
+.seat--available { background: #334155; }.seat--selected { background: #ef3340; box-shadow: 0 0 8px rgba(239,51,64,.65); }.seat--occupied { background: #94a3b8; opacity: .4; }
+.legend { display: inline-flex; align-items: center; gap: .4rem; }
+.recap-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }.recap-row dt { color: #94a3b8; }.recap-row dd { font-weight: 700; color: #f8fafc; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
