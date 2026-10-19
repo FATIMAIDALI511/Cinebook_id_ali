@@ -2,6 +2,9 @@
 
 // Bienvenue dans le fichier de travail principal de CineBook !
 // Le HTML et les données sont prêts, mais les interactions sont volontairement absentes.
+// La page contient déjà un exemple statique complet pour montrer le résultat attendu.
+// Inspectez et copiez la structure HTML utile, puis remplacez ces exemples avec
+// les éléments que votre code crée à partir des tableaux de data.js.
 // Avancez section par section et testez souvent dans le navigateur.
 
 // ==================================================
@@ -32,8 +35,9 @@
 // dans #films-container.
 // NOTIONS UTILES : forEach, createElement ou innerHTML, propriétés d'un objet.
 // QUESTIONS : Comment parcourir films ? Comment utiliser film.affiche et film.titre ?
-// TODO : 1) vider l'état initial ; 2) construire les cartes ; 3) les insérer.
+// TODO : 1) vider les cartes statiques ; 2) construire les cartes ; 3) les insérer.
 // PISTE : ajoutez l'identifiant du film dans un attribut data-film-id du bouton.
+// MODÈLE : observez l'élément <article data-film-id="1"> dans index.html.
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
@@ -46,6 +50,7 @@
 // QUESTIONS : Où lire l'id du bouton ? Comment comparer cet id à film.id ?
 // TODO : écouter les clics, modifier l'état et mettre à jour les détails.
 // PISTE : un changement de film doit aussi réinitialiser séance et sièges.
+// MODÈLE : #film-details contient déjà un exemple de détail à reproduire.
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
@@ -56,6 +61,7 @@
 // NOTIONS UTILES : tableau imbriqué, boucle, bouton, innerHTML.
 // QUESTIONS : Dans quelle propriété du film se trouvent les séances ?
 // TODO : créer un bouton par séance et conserver son id dans data-seance-id.
+// MODÈLE : les trois boutons statiques de #seances-container montrent le HTML attendu.
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
@@ -77,6 +83,7 @@
 // QUESTIONS : Comment fabriquer le nom "C4" ? Où sont les sièges occupés ?
 // TODO : générer les sièges et donner un état visuel différent aux places occupées.
 // PISTE : rangees et siegesParRangee sont fournis dans data.js.
+// MODÈLE : #sieges-container contient les 30 sièges statiques et leurs classes Tailwind.
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
@@ -97,6 +104,7 @@
 // NOTIONS UTILES : multiplication, length, join(), textContent.
 // QUESTIONS : Quelle formule relie prix du film et nombre de sièges ?
 // TODO : écrire une fonction appelée après chaque changement de sélection.
+// MODÈLE : le récapitulatif HTML affiche des exemples de valeurs déjà remplies.
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
