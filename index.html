@@ -16,9 +16,8 @@
       }
     };
   </script>
-  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen bg-cine-950 text-cine-navy antialiased">
+<body class="min-h-screen scroll-smooth bg-cine-950 text-cine-navy antialiased selection:bg-red-100 selection:text-red-900">
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-xl">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4" aria-label="Navigation principale">
       <a href="#accueil" class="flex items-center gap-3" aria-label="CineBook, accueil">
@@ -34,7 +33,7 @@
   </header>
 
   <main id="accueil">
-    <section class="hero-glow overflow-hidden border-b border-slate-200">
+    <section class="overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_78%_42%,rgba(230,57,70,.13),transparent_34%),linear-gradient(135deg,#ffffff,#eef3f9_65%)]">
       <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:py-24">
         <div>
           <p class="mb-4 text-sm font-bold uppercase tracking-[.25em] text-cine-red">Votre séance commence ici</p>
@@ -43,8 +42,8 @@
           <a href="#films" class="mt-8 inline-flex rounded-xl bg-cine-red px-6 py-3 font-bold shadow-lg shadow-red-950/50 transition hover:-translate-y-0.5 hover:bg-red-500">Découvrir les films</a>
         </div>
         <div class="relative mx-auto grid w-full max-w-lg grid-cols-2 gap-3" aria-hidden="true">
-          <img src="assets/images/mission-galaxie.png" alt="" class="poster-preview translate-y-6">
-          <img src="assets/images/minuit-casablanca.png" alt="" class="poster-preview">
+          <img src="assets/images/mission-galaxie.png" alt="" class="aspect-[2/3] w-full translate-y-6 rounded-2xl object-cover shadow-2xl">
+          <img src="assets/images/minuit-casablanca.png" alt="" class="aspect-[2/3] w-full rounded-2xl object-cover shadow-2xl">
         </div>
       </div>
     </section>
@@ -57,67 +56,67 @@
     <section id="apercu" class="mx-auto max-w-7xl px-5 py-16" aria-labelledby="apercu-title">
       <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p class="section-kicker">Exemple visuel</p>
-          <h2 id="apercu-title" class="section-title">Voici à quoi peut ressembler le résultat</h2>
+          <p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Exemple visuel</p>
+          <h2 id="apercu-title" class="text-2xl font-black tracking-tight sm:text-3xl">Voici à quoi peut ressembler le résultat</h2>
         </div>
-        <span class="demo-badge">Aperçu statique · non interactif</span>
+        <span class="rounded-full border border-sky-200 bg-sky-50 px-3 py-2 text-xs font-bold text-sky-800">Aperçu statique · non interactif</span>
       </div>
 
       <div class="mb-10 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm leading-6 text-sky-900">
         <strong>Observez, puis recréez avec JavaScript.</strong> Les éléments ci-dessous sont écrits en HTML uniquement pour montrer le résultat attendu. Votre code devra produire des éléments similaires dans les zones d’exercice plus bas.
       </div>
 
-      <div class="demo-movies" aria-label="Exemples statiques de cartes de films">
-        <article class="movie-card movie-card--active">
-          <div class="relative"><img src="assets/images/mission-galaxie.png" alt="Affiche de Mission Galaxie"><span class="movie-price">55 DH</span></div>
-          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Science-fiction</p><h3 class="mt-1 text-lg font-black">Mission Galaxie</h3><p class="mt-2 text-sm text-slate-500">2 h 04 min</p><button type="button" class="demo-button mt-4" disabled>Sélectionné</button></div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Exemples statiques de cartes de films">
+        <article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-[0_12px_30px_rgba(19,33,60,.09)] ring-2 ring-red-100">
+          <div class="relative"><img src="assets/images/mission-galaxie.png" alt="Affiche de Mission Galaxie" class="aspect-[2/3] w-full object-cover"><span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold text-cine-navy shadow-lg backdrop-blur">55 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Science-fiction</p><h3 class="mt-1 text-lg font-black">Mission Galaxie</h3><p class="mt-2 text-sm text-slate-500">2 h 04 min</p><button type="button" class="mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white" disabled>Sélectionné</button></div>
         </article>
-        <article class="movie-card">
-          <div class="relative"><img src="assets/images/minuit-casablanca.png" alt="Affiche de Minuit à Casablanca"><span class="movie-price">50 DH</span></div>
-          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Thriller</p><h3 class="mt-1 text-lg font-black">Minuit à Casablanca</h3><p class="mt-2 text-sm text-slate-500">1 h 48 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_30px_rgba(19,33,60,.09)]">
+          <div class="relative"><img src="assets/images/minuit-casablanca.png" alt="Affiche de Minuit à Casablanca" class="aspect-[2/3] w-full object-cover"><span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold text-cine-navy shadow-lg backdrop-blur">50 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Thriller</p><h3 class="mt-1 text-lg font-black">Minuit à Casablanca</h3><p class="mt-2 text-sm text-slate-500">1 h 48 min</p><button type="button" class="mt-4 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700" disabled>Choisir ce film</button></div>
         </article>
-        <article class="movie-card">
-          <div class="relative"><img src="assets/images/secret-atlas.png" alt="Affiche du Secret de l'Atlas"><span class="movie-price">45 DH</span></div>
-          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Aventure</p><h3 class="mt-1 text-lg font-black">Le Secret de l’Atlas</h3><p class="mt-2 text-sm text-slate-500">1 h 56 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_30px_rgba(19,33,60,.09)]">
+          <div class="relative"><img src="assets/images/secret-atlas.png" alt="Affiche du Secret de l'Atlas" class="aspect-[2/3] w-full object-cover"><span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold text-cine-navy shadow-lg backdrop-blur">45 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Aventure</p><h3 class="mt-1 text-lg font-black">Le Secret de l’Atlas</h3><p class="mt-2 text-sm text-slate-500">1 h 56 min</p><button type="button" class="mt-4 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700" disabled>Choisir ce film</button></div>
         </article>
-        <article class="movie-card">
-          <div class="relative"><img src="assets/images/derniere-frequence.png" alt="Affiche de Dernière Fréquence"><span class="movie-price">60 DH</span></div>
-          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Drame futuriste</p><h3 class="mt-1 text-lg font-black">Dernière Fréquence</h3><p class="mt-2 text-sm text-slate-500">2 h 12 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_30px_rgba(19,33,60,.09)]">
+          <div class="relative"><img src="assets/images/derniere-frequence.png" alt="Affiche de Dernière Fréquence" class="aspect-[2/3] w-full object-cover"><span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold text-cine-navy shadow-lg backdrop-blur">60 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">Drame futuriste</p><h3 class="mt-1 text-lg font-black">Dernière Fréquence</h3><p class="mt-2 text-sm text-slate-500">2 h 12 min</p><button type="button" class="mt-4 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700" disabled>Choisir ce film</button></div>
         </article>
       </div>
 
       <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_340px]">
-        <div class="panel">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8">
           <div class="flex flex-wrap items-center justify-between gap-4">
-            <div><p class="section-kicker">Exemple de sélection</p><h3 class="text-xl font-black">Mission Galaxie</h3></div>
+            <div><p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Exemple de sélection</p><h3 class="text-xl font-black">Mission Galaxie</h3></div>
             <div class="flex gap-2" aria-label="Exemples de séances">
-              <button class="showtime showtime--active" type="button" disabled>14:00</button>
-              <button class="showtime" type="button" disabled>17:30</button>
-              <button class="showtime" type="button" disabled>21:00</button>
+              <button class="rounded-xl border border-cine-red bg-cine-red px-3 py-2 font-bold text-white" type="button" disabled>14:00</button>
+              <button class="rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 font-bold text-slate-700" type="button" disabled>17:30</button>
+              <button class="rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 font-bold text-slate-700" type="button" disabled>21:00</button>
             </div>
           </div>
-          <div class="screen mt-10">Écran</div>
-          <div class="demo-seat-map mt-8" aria-label="Exemple statique d'un plan de salle">
-            <span class="row-label">A</span><i class="demo-seat is-occupied">1</i><i class="demo-seat is-occupied">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
-            <span class="row-label">B</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat is-occupied">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
-            <span class="row-label">C</span><i class="demo-seat">1</i><i class="demo-seat is-selected">2</i><i class="demo-seat is-selected">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
-            <span class="row-label">D</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat is-occupied">5</i><i class="demo-seat">6</i>
-            <span class="row-label">E</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
+          <div class="mx-auto mt-10 max-w-lg rounded-[50%] border-t-4 border-slate-500 pt-3 text-center text-[.7rem] uppercase tracking-[.35em] text-slate-500 drop-shadow">Écran</div>
+          <div class="mx-auto mt-8 grid max-w-sm grid-cols-[1rem_repeat(6,minmax(1.75rem,2.6rem))] justify-center gap-1.5" aria-label="Exemple statique d'un plan de salle">
+            <span class="self-center text-xs font-extrabold text-slate-500">A</span><i class="grid aspect-square place-items-center rounded-lg bg-slate-400 text-[.65rem] font-extrabold not-italic text-white opacity-50">1</i><i class="grid aspect-square place-items-center rounded-lg bg-slate-400 text-[.65rem] font-extrabold not-italic text-white opacity-50">2</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">3</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">4</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">5</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">6</i>
+            <span class="self-center text-xs font-extrabold text-slate-500">B</span><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">1</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">2</i><i class="grid aspect-square place-items-center rounded-lg bg-slate-400 text-[.65rem] font-extrabold not-italic text-white opacity-50">3</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">4</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">5</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">6</i>
+            <span class="self-center text-xs font-extrabold text-slate-500">C</span><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">1</i><i class="grid aspect-square place-items-center rounded-lg bg-cine-red text-[.65rem] font-extrabold not-italic text-white shadow-[0_0_10px_rgba(230,57,70,.5)]">2</i><i class="grid aspect-square place-items-center rounded-lg bg-cine-red text-[.65rem] font-extrabold not-italic text-white shadow-[0_0_10px_rgba(230,57,70,.5)]">3</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">4</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">5</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">6</i>
+            <span class="self-center text-xs font-extrabold text-slate-500">D</span><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">1</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">2</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">3</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">4</i><i class="grid aspect-square place-items-center rounded-lg bg-slate-400 text-[.65rem] font-extrabold not-italic text-white opacity-50">5</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">6</i>
+            <span class="self-center text-xs font-extrabold text-slate-500">E</span><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">1</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">2</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">3</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">4</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">5</i><i class="grid aspect-square place-items-center rounded-lg bg-blue-600 text-[.65rem] font-extrabold not-italic text-white">6</i>
           </div>
-          <div class="mt-7 flex flex-wrap justify-center gap-5 text-xs text-slate-600"><span class="legend"><i class="seat seat--available"></i>Disponible</span><span class="legend"><i class="seat seat--selected"></i>Sélectionné</span><span class="legend"><i class="seat seat--occupied"></i>Occupé</span></div>
+          <div class="mt-7 flex flex-wrap justify-center gap-5 text-xs text-slate-600"><span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-blue-600"></i>Disponible</span><span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-cine-red"></i>Sélectionné</span><span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-slate-400 opacity-60"></i>Occupé</span></div>
         </div>
 
-        <aside class="panel">
-          <p class="section-kicker">Exemple final</p><h3 class="text-xl font-black">Récapitulatif</h3>
+        <aside class="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8">
+          <p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Exemple final</p><h3 class="text-xl font-black">Récapitulatif</h3>
           <dl class="mt-7 space-y-4 text-sm">
-            <div class="recap-row"><dt>Film</dt><dd>Mission Galaxie</dd></div>
-            <div class="recap-row"><dt>Séance</dt><dd>14:00</dd></div>
-            <div class="recap-row"><dt>Nombre de sièges</dt><dd>2</dd></div>
-            <div class="recap-row"><dt>Sièges</dt><dd>C2, C3</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Film</dt><dd class="font-bold">Mission Galaxie</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Séance</dt><dd class="font-bold">14:00</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Nombre de sièges</dt><dd class="font-bold">2</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Sièges</dt><dd class="font-bold">C2, C3</dd></div>
           </dl>
           <div class="my-6 h-px bg-slate-200"></div>
           <div class="flex items-baseline justify-between"><span class="font-semibold">Total</span><span class="text-3xl font-black">110 <small class="text-sm text-slate-500">DH</small></span></div>
-          <button type="button" class="demo-button mt-7" disabled>Confirmer la réservation</button>
+          <button type="button" class="mt-7 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white" disabled>Confirmer la réservation</button>
           <p class="mt-4 rounded-xl bg-emerald-50 p-3 text-sm font-medium text-emerald-700">Exemple : votre réservation est prête.</p>
         </aside>
       </div>
@@ -125,11 +124,11 @@
 
     <section id="films" class="mx-auto max-w-7xl px-5 py-16">
       <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <div><p class="section-kicker">À découvrir</p><h2 class="section-title">Films à l’affiche</h2></div>
+        <div><p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">À découvrir</p><h2 class="text-2xl font-black tracking-tight sm:text-3xl">Films à l’affiche</h2></div>
         <p class="max-w-md text-sm text-slate-500">Les cartes seront générées ici à partir du tableau <code>films</code>.</p>
       </div>
-      <div id="films-container" class="empty-state min-h-64" aria-live="polite">
-        <span class="empty-icon">🎬</span>
+      <div id="films-container" class="grid min-h-64 place-items-center content-center rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center" aria-live="polite">
+        <span class="grid h-14 w-14 place-items-center rounded-full bg-red-50 text-2xl">🎬</span>
         <h3 class="mt-4 text-lg font-bold">Le catalogue attend votre code</h3>
         <p class="mt-2 max-w-md text-sm text-slate-500">Commencez par la section US01 dans <code>js/app.js</code> pour afficher les films.</p>
       </div>
@@ -138,37 +137,37 @@
     <section id="reservation" class="border-y border-slate-200 bg-slate-100/80">
       <div class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[1fr_360px]">
         <div class="space-y-8">
-          <section class="panel" aria-labelledby="details-title">
-            <p class="section-kicker">Étape 1</p><h2 id="details-title" class="section-title">Votre film</h2>
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8" aria-labelledby="details-title">
+            <p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Étape 1</p><h2 id="details-title" class="text-2xl font-black tracking-tight sm:text-3xl">Votre film</h2>
             <div id="film-details" class="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-slate-500">Sélectionnez un film pour afficher son titre, son genre, sa durée, son prix et sa description.</div>
           </section>
 
-          <section class="panel" aria-labelledby="seances-title">
-            <p class="section-kicker">Étape 2</p><h2 id="seances-title" class="section-title">Choisissez une séance</h2>
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8" aria-labelledby="seances-title">
+            <p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Étape 2</p><h2 id="seances-title" class="text-2xl font-black tracking-tight sm:text-3xl">Choisissez une séance</h2>
             <div id="seances-container" class="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-slate-500">Choisissez d’abord un film pour découvrir ses horaires.</div>
           </section>
 
-          <section class="panel" aria-labelledby="salle-title">
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8" aria-labelledby="salle-title">
             <div class="flex flex-wrap items-end justify-between gap-4">
-              <div><p class="section-kicker">Étape 3</p><h2 id="salle-title" class="section-title">Plan de la salle</h2></div>
+              <div><p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Étape 3</p><h2 id="salle-title" class="text-2xl font-black tracking-tight sm:text-3xl">Plan de la salle</h2></div>
               <div class="flex flex-wrap gap-4 text-xs text-slate-600" aria-label="Légende des sièges">
-                <span class="legend"><i class="seat seat--available"></i>Disponible</span>
-                <span class="legend"><i class="seat seat--selected"></i>Sélectionné</span>
-                <span class="legend"><i class="seat seat--occupied"></i>Occupé</span>
+                <span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-blue-600"></i>Disponible</span>
+                <span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-cine-red"></i>Sélectionné</span>
+                <span class="inline-flex items-center gap-2"><i class="inline-block h-3.5 w-4 rounded bg-slate-400 opacity-60"></i>Occupé</span>
               </div>
             </div>
-            <div class="screen mt-9">Écran</div>
+            <div class="mx-auto mt-9 max-w-lg rounded-[50%] border-t-4 border-slate-500 pt-3 text-center text-[.7rem] uppercase tracking-[.35em] text-slate-500 drop-shadow">Écran</div>
             <div id="sieges-container" class="mt-10 min-h-48 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center text-slate-500">Sélectionnez une séance avant d’afficher les 30 sièges.</div>
           </section>
         </div>
 
-        <aside class="panel h-fit lg:sticky lg:top-24" aria-labelledby="recap-title">
-          <p class="section-kicker">Votre commande</p><h2 id="recap-title" class="section-title">Récapitulatif</h2>
+        <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_38px_rgba(19,33,60,.08)] sm:p-8 lg:sticky lg:top-24" aria-labelledby="recap-title">
+          <p class="mb-1 text-[.7rem] font-extrabold uppercase tracking-[.2em] text-cine-red">Votre commande</p><h2 id="recap-title" class="text-2xl font-black tracking-tight sm:text-3xl">Récapitulatif</h2>
           <dl class="mt-7 space-y-4 text-sm">
-            <div class="recap-row"><dt>Film</dt><dd id="recap-film">—</dd></div>
-            <div class="recap-row"><dt>Séance</dt><dd id="recap-seance">—</dd></div>
-            <div class="recap-row"><dt>Nombre de sièges</dt><dd id="nombre-sieges">0</dd></div>
-            <div class="recap-row items-start"><dt>Sièges</dt><dd id="sieges-selectionnes" class="max-w-40 text-right">Aucun</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Film</dt><dd id="recap-film" class="font-bold">—</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Séance</dt><dd id="recap-seance" class="font-bold">—</dd></div>
+            <div class="flex items-center justify-between gap-4"><dt class="text-slate-500">Nombre de sièges</dt><dd id="nombre-sieges" class="font-bold">0</dd></div>
+            <div class="flex items-start justify-between gap-4"><dt class="text-slate-500">Sièges</dt><dd id="sieges-selectionnes" class="max-w-40 text-right font-bold">Aucun</dd></div>
           </dl>
           <div class="my-6 h-px bg-slate-200"></div>
           <div class="flex items-baseline justify-between"><span class="font-semibold">Total</span><span class="text-3xl font-black"><span id="prix-total">0</span> <small class="text-sm text-slate-500">DH</small></span></div>
