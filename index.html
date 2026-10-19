@@ -26,6 +26,7 @@
         <span class="text-xl font-black tracking-tight">Cine<span class="text-cine-red">Book</span></span>
       </a>
       <div class="hidden items-center gap-7 text-sm font-medium text-slate-300 sm:flex">
+        <a class="transition hover:text-white" href="#apercu">Aperçu</a>
         <a class="transition hover:text-white" href="#films">Films</a>
         <a class="transition hover:text-white" href="#reservation">Réservation</a>
       </div>
@@ -45,6 +46,80 @@
           <img src="assets/images/mission-galaxie.png" alt="" class="poster-preview translate-y-6">
           <img src="assets/images/minuit-casablanca.png" alt="" class="poster-preview">
         </div>
+      </div>
+    </section>
+
+    <!--
+      APERÇU PUREMENT STATIQUE
+      Cette section sert de référence visuelle aux apprenants.
+      Elle n'utilise aucun identifiant attendu par app.js et ne contient aucune logique.
+    -->
+    <section id="apercu" class="mx-auto max-w-7xl px-5 py-16" aria-labelledby="apercu-title">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="section-kicker">Exemple visuel</p>
+          <h2 id="apercu-title" class="section-title">Voici à quoi peut ressembler le résultat</h2>
+        </div>
+        <span class="demo-badge">Aperçu statique · non interactif</span>
+      </div>
+
+      <div class="mb-10 rounded-2xl border border-sky-400/20 bg-sky-400/5 p-4 text-sm leading-6 text-sky-100">
+        <strong>Observez, puis recréez avec JavaScript.</strong> Les éléments ci-dessous sont écrits en HTML uniquement pour montrer le résultat attendu. Votre code devra produire des éléments similaires dans les zones d’exercice plus bas.
+      </div>
+
+      <div class="demo-movies" aria-label="Exemples statiques de cartes de films">
+        <article class="movie-card movie-card--active">
+          <div class="relative"><img src="assets/images/mission-galaxie.png" alt="Affiche de Mission Galaxie"><span class="movie-price">55 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-red-400">Science-fiction</p><h3 class="mt-1 text-lg font-black">Mission Galaxie</h3><p class="mt-2 text-sm text-slate-400">2 h 04 min</p><button type="button" class="demo-button mt-4" disabled>Sélectionné</button></div>
+        </article>
+        <article class="movie-card">
+          <div class="relative"><img src="assets/images/minuit-casablanca.png" alt="Affiche de Minuit à Casablanca"><span class="movie-price">50 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-red-400">Thriller</p><h3 class="mt-1 text-lg font-black">Minuit à Casablanca</h3><p class="mt-2 text-sm text-slate-400">1 h 48 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        </article>
+        <article class="movie-card">
+          <div class="relative"><img src="assets/images/secret-atlas.png" alt="Affiche du Secret de l'Atlas"><span class="movie-price">45 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-red-400">Aventure</p><h3 class="mt-1 text-lg font-black">Le Secret de l’Atlas</h3><p class="mt-2 text-sm text-slate-400">1 h 56 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        </article>
+        <article class="movie-card">
+          <div class="relative"><img src="assets/images/derniere-frequence.png" alt="Affiche de Dernière Fréquence"><span class="movie-price">60 DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-red-400">Drame futuriste</p><h3 class="mt-1 text-lg font-black">Dernière Fréquence</h3><p class="mt-2 text-sm text-slate-400">2 h 12 min</p><button type="button" class="demo-button demo-button--outline mt-4" disabled>Choisir ce film</button></div>
+        </article>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_340px]">
+        <div class="panel">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div><p class="section-kicker">Exemple de sélection</p><h3 class="text-xl font-black">Mission Galaxie</h3></div>
+            <div class="flex gap-2" aria-label="Exemples de séances">
+              <button class="showtime showtime--active" type="button" disabled>14:00</button>
+              <button class="showtime" type="button" disabled>17:30</button>
+              <button class="showtime" type="button" disabled>21:00</button>
+            </div>
+          </div>
+          <div class="screen mt-10">Écran</div>
+          <div class="demo-seat-map mt-8" aria-label="Exemple statique d'un plan de salle">
+            <span class="row-label">A</span><i class="demo-seat is-occupied">1</i><i class="demo-seat is-occupied">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
+            <span class="row-label">B</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat is-occupied">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
+            <span class="row-label">C</span><i class="demo-seat">1</i><i class="demo-seat is-selected">2</i><i class="demo-seat is-selected">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
+            <span class="row-label">D</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat is-occupied">5</i><i class="demo-seat">6</i>
+            <span class="row-label">E</span><i class="demo-seat">1</i><i class="demo-seat">2</i><i class="demo-seat">3</i><i class="demo-seat">4</i><i class="demo-seat">5</i><i class="demo-seat">6</i>
+          </div>
+          <div class="mt-7 flex flex-wrap justify-center gap-5 text-xs text-slate-400"><span class="legend"><i class="seat seat--available"></i>Disponible</span><span class="legend"><i class="seat seat--selected"></i>Sélectionné</span><span class="legend"><i class="seat seat--occupied"></i>Occupé</span></div>
+        </div>
+
+        <aside class="panel">
+          <p class="section-kicker">Exemple final</p><h3 class="text-xl font-black">Récapitulatif</h3>
+          <dl class="mt-7 space-y-4 text-sm">
+            <div class="recap-row"><dt>Film</dt><dd>Mission Galaxie</dd></div>
+            <div class="recap-row"><dt>Séance</dt><dd>14:00</dd></div>
+            <div class="recap-row"><dt>Nombre de sièges</dt><dd>2</dd></div>
+            <div class="recap-row"><dt>Sièges</dt><dd>C2, C3</dd></div>
+          </dl>
+          <div class="my-6 h-px bg-white/10"></div>
+          <div class="flex items-baseline justify-between"><span class="font-semibold">Total</span><span class="text-3xl font-black">110 <small class="text-sm text-slate-400">DH</small></span></div>
+          <button type="button" class="demo-button mt-7" disabled>Confirmer la réservation</button>
+          <p class="mt-4 rounded-xl bg-emerald-400/10 p-3 text-sm text-emerald-300">Exemple : votre réservation est prête.</p>
+        </aside>
       </div>
     </section>
 
