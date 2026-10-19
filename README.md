@@ -4,7 +4,7 @@ CineBook est une interface de réservation de cinéma conçue pour pratiquer Jav
 
 ## Ce qui est fourni
 
-- Une interface HTML5 sombre, moderne et responsive, mise en forme avec Tailwind CSS.
+- Une interface HTML5 claire, moderne et responsive, mise en forme avec Tailwind CSS.
 - Quatre films fictifs et leurs séances dans `js/data.js`.
 - Quatre affiches originales stockées localement dans `assets/images/`.
 - Une démonstration statique complète (cartes, séances, sièges et récapitulatif) dont les apprenants peuvent s’inspirer visuellement.
