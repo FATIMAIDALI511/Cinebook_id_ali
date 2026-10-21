@@ -15,8 +15,8 @@
 // QUESTIONS : Quel identifiant correspond au catalogue ? Au prix total ?
 // TODO : créez ici des constantes explicites pour les éléments nécessaires.
 // ÉCRIVEZ VOTRE CODE ICI :
-const filmCatalogue=document.getElementById("films-container");
-
+const filmCatalogue = document.getElementById("films-container");
+console.log(filmCatalogue)
 
 // ==================================================
 // 0 BIS - MÉMORISER L'ÉTAT DE L'APPLICATION
@@ -41,8 +41,8 @@ const filmCatalogue=document.getElementById("films-container");
 // MODÈLE : observez l'élément <article data-film-id="1"> dans index.html.
 // ÉCRIVEZ VOTRE CODE ICI :
 films.forEach(film => {
-        filmCatalogue.innerHTML += `
-           <article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-xl ring-2 ring-red-100" data-film-id=${film.id} >
+    filmCatalogue.innerHTML += `
+        <article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-xl ring-2 ring-red-100" data-film-id=${film.id} >
           <div class="relative">
           <img src="${film.affiche}" alt="${film.description}" class="aspect-[2/3] w-full object-cover">
           <span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold shadow-lg">
@@ -53,15 +53,22 @@ films.forEach(film => {
           <p class="text-xs font-bold uppercase tracking-wider text-cine-red">
           ${film.genre}</p>
           <h3 class="mt-1 text-lg font-black">${film.titre}
-          </h3><p class="mt-2 text-sm text-slate-500">
-          ${film.duree}
+          </h3><p class="mt-2 text-sm text-slate-500 duree">
+        ${convertitMenuteToHeure(film)}
           </p>
-          <button type="button" class="mt-4 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700">Choisir ce film</button>
+          <button type="button" id="${film.id}"   class="mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700">Choisir ce film</button>
           </div>
         </article >`;
 
-    });
+});
 
+// fonction pour convirtir min to heure et min:
+function convertitMenuteToHeure(film) {
+        let min = film.duree % 60;
+        let heure = (film.duree - min) / 60;
+        let duree=`${heure} H ${min} min`;
+    return duree;
+}
 
 // ==================================================
 // US02 - SÉLECTIONNER UN FILM
@@ -74,7 +81,20 @@ films.forEach(film => {
 // PISTE : un changement de film doit aussi réinitialiser séance et sièges.
 // MODÈLE : #film-details contient déjà un exemple de détail à reproduire.
 // ÉCRIVEZ VOTRE CODE ICI :
-
+const btns = document.querySelectorAll(".btn")
+// console.log(btns)
+btns.forEach(btn=>{
+  let selected=false;
+  btn.addEventListener('click', ()=>{
+    selected=!selected;
+    if(selected){
+      btn.classList='mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white';
+      btn.textContent='selectinner';
+    }else{
+      btn.classList='mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700'
+    }
+  })
+})
 
 // ==================================================
 // US03 - AFFICHER LES SÉANCES
