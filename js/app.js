@@ -16,7 +16,6 @@
 // TODO : créez ici des constantes explicites pour les éléments nécessaires.
 // ÉCRIVEZ VOTRE CODE ICI :
 const filmCatalogue = document.getElementById("films-container");
-console.log(filmCatalogue)
 
 // ==================================================
 // 0 BIS - MÉMORISER L'ÉTAT DE L'APPLICATION
@@ -41,7 +40,7 @@ console.log(filmCatalogue)
 // MODÈLE : observez l'élément <article data-film-id="1"> dans index.html.
 // ÉCRIVEZ VOTRE CODE ICI :
 films.forEach(film => {
-  filmCatalogue.innerHTML += `
+  filmCatalogue.innerHTML +=`
         <article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-xl ring-2 ring-red-100" data-film-id=${film.id} >
           <div class="relative">
           <img src="${film.affiche}" alt="${film.description}" class="aspect-[2/3] w-full object-cover">
@@ -59,7 +58,6 @@ films.forEach(film => {
           <button type="button" id="${film.id}"   class="mt-4 w-full btn_film rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700">Choisir ce film</button>
           </div>
         </article >`;
-
 });
 
 // fonction pour convirtir min to heure et min:
@@ -86,42 +84,37 @@ let filmdetail = document.getElementById("film-details")
 
 let btn_id_list = [];
 btns.forEach(btn => {
-  let selected = false;
   btn.addEventListener('click', () => {
     let list = selectinnerUnFilm(btn);
-    // console.log(" id de film /btn",btn.id)
-    afficherFilmDetail(btn, list);
-    
-
+    // afficherFilmDetail(btn, list);
   })
 })
-function afficherFilmDetail(btn, list){
-  if(list!=undefined){
-    if(btn.id==list[0]){
-       filmdetail.innerHTML = `<img src="${films[btn.id-1].affiche}" alt="${films[btn.id-1].description}" class="aspect-[2/3] w-24 rounded-xl object-cover shadow-md">
-              <div>
-               <div class="flex flex-wrap items-center gap-2">
-                 <h3 class="text-xl font-black">${films[btn.id-1].titre}</h3>
-                  <span class="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700">${films[btn.id-1].prix}</span>
-                </div><p class="mt-2 text-sm font-semibold text-slate-500">${films[btn.id-1].genre} · ${convertitMenuteToHeure(films[btn.id-1])}</p><p class="mt-3 leading-7 text-slate-600">
-                   ${films[btn.id-1].description}</p>
-              </div>`
-    }
-    }
-}
+// function afficherFilmDetail(btn, list){
+//   if(list!=undefined){
+//     if(btn.id==list[0]){
+//        filmdetail.innerHTML += `<img src="${films[btn.id-1].affiche}" alt="${films[btn.id-1].description}" class="aspect-[2/3] w-24 rounded-xl object-cover shadow-md">
+//               <div>
+//                <div class="flex flex-wrap items-center gap-2">
+//                  <h3 class="text-xl font-black">${films[btn.id-1].titre}</h3>
+//                   <span class="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700">${films[btn.id-1].prix}</span>
+//                 </div><p class="mt-2 text-sm font-semibold text-slate-500">${films[btn.id-1].genre} · ${convertitMenuteToHeure(films[btn.id-1])}</p><p class="mt-3 leading-7 text-slate-600">
+//                    ${films[btn.id-1].description}</p>
+//               </div>`
+//     }
+//     }
+// }
 function selectinnerUnFilm(btn) {
-  if (btn_id_list.length == 1) {
-    console.log(btn.id)
-    if (btn_id_list[0] == btn.id) {
+
+    if (btn_id_list.includes(btn.id)) {
+      let index=btn_id_list.indexOf(btn.id);
       btn.classList = 'mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700'
       btn.textContent = 'choisir ce film';
-      btn_id_list.pop();
+      btn_id_list.splice(index,1)
+      return;
     }
-    return;
-  };
   btn.classList = 'mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white';
   btn.textContent = 'selectinner';
-  btn_id_list = [btn.id]
+  btn_id_list.push(btn.id)
   console.log(btn_id_list)
   return btn_id_list;
 }
