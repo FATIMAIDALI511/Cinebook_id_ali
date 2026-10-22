@@ -89,9 +89,14 @@ btns.forEach(btn => {
   let selected = false;
   btn.addEventListener('click', () => {
     let list = selectinnerUnFilm(btn);
-    console.log(" id de film /btn",btn.id)
-    // if(btn.id==list[0]){console.log("true")}
-    if(list!=undefined){
+    // console.log(" id de film /btn",btn.id)
+    afficherFilmDetail(btn, list);
+    
+
+  })
+})
+function afficherFilmDetail(btn, list){
+  if(list!=undefined){
     if(btn.id==list[0]){
        filmdetail.innerHTML = `<img src="${films[btn.id-1].affiche}" alt="${films[btn.id-1].description}" class="aspect-[2/3] w-24 rounded-xl object-cover shadow-md">
               <div>
@@ -103,20 +108,16 @@ btns.forEach(btn => {
               </div>`
     }
     }
-
-  })
-})
-
+}
 function selectinnerUnFilm(btn) {
   if (btn_id_list.length == 1) {
     console.log(btn.id)
     if (btn_id_list[0] == btn.id) {
-      // console.log("the id are equal")
       btn.classList = 'mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700'
       btn.textContent = 'choisir ce film';
       btn_id_list.pop();
     }
-    return
+    return;
   };
   btn.classList = 'mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white';
   btn.textContent = 'selectinner';
