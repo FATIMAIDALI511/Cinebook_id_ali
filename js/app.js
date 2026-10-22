@@ -41,7 +41,7 @@ console.log(filmCatalogue)
 // MODÈLE : observez l'élément <article data-film-id="1"> dans index.html.
 // ÉCRIVEZ VOTRE CODE ICI :
 films.forEach(film => {
-    filmCatalogue.innerHTML += `
+  filmCatalogue.innerHTML += `
         <article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-xl ring-2 ring-red-100" data-film-id=${film.id} >
           <div class="relative">
           <img src="${film.affiche}" alt="${film.description}" class="aspect-[2/3] w-full object-cover">
@@ -56,7 +56,7 @@ films.forEach(film => {
           </h3><p class="mt-2 text-sm text-slate-500 duree">
         ${convertitMenuteToHeure(film)}
           </p>
-          <button type="button" id="${film.id}"   class="mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700">Choisir ce film</button>
+          <button type="button" id="${film.id}"   class="mt-4 w-full btn_film rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700">Choisir ce film</button>
           </div>
         </article >`;
 
@@ -64,10 +64,10 @@ films.forEach(film => {
 
 // fonction pour convirtir min to heure et min:
 function convertitMenuteToHeure(film) {
-        let min = film.duree % 60;
-        let heure = (film.duree - min) / 60;
-        let duree=`${heure} H ${min} min`;
-    return duree;
+  let min = film.duree % 60;
+  let heure = (film.duree - min) / 60;
+  let duree = `${heure} H ${min} min`;
+  return duree;
 }
 
 // ==================================================
@@ -81,21 +81,49 @@ function convertitMenuteToHeure(film) {
 // PISTE : un changement de film doit aussi réinitialiser séance et sièges.
 // MODÈLE : #film-details contient déjà un exemple de détail à reproduire.
 // ÉCRIVEZ VOTRE CODE ICI :
-const btns = document.querySelectorAll(".btn")
-// console.log(btns)
-btns.forEach(btn=>{
-  let selected=false;
-  btn.addEventListener('click', ()=>{
-    selected=!selected;
-    if(selected){
-      btn.classList='mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white';
-      btn.textContent='selectinner';
-    }else{
-      btn.classList='mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700'
+const btns = document.querySelectorAll(".btn_film")
+let filmdetail = document.getElementById("film-details")
+
+let btn_id_list = [];
+btns.forEach(btn => {
+  let selected = false;
+  btn.addEventListener('click', () => {
+    let list = selectinnerUnFilm(btn);
+    console.log(" id de film /btn",btn.id)
+    // if(btn.id==list[0]){console.log("true")}
+    if(list!=undefined){
+    if(btn.id==list[0]){
+       filmdetail.innerHTML = `<img src="${films[btn.id-1].affiche}" alt="${films[btn.id-1].description}" class="aspect-[2/3] w-24 rounded-xl object-cover shadow-md">
+              <div>
+               <div class="flex flex-wrap items-center gap-2">
+                 <h3 class="text-xl font-black">${films[btn.id-1].titre}</h3>
+                  <span class="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700">${films[btn.id-1].prix}</span>
+                </div><p class="mt-2 text-sm font-semibold text-slate-500">${films[btn.id-1].genre} · ${convertitMenuteToHeure(films[btn.id-1])}</p><p class="mt-3 leading-7 text-slate-600">
+                   ${films[btn.id-1].description}</p>
+              </div>`
     }
+    }
+
   })
 })
 
+function selectinnerUnFilm(btn) {
+  if (btn_id_list.length == 1) {
+    console.log(btn.id)
+    if (btn_id_list[0] == btn.id) {
+      // console.log("the id are equal")
+      btn.classList = 'mt-4 w-full btn rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 font-extrabold text-slate-700'
+      btn.textContent = 'choisir ce film';
+      btn_id_list.pop();
+    }
+    return
+  };
+  btn.classList = 'mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white';
+  btn.textContent = 'selectinner';
+  btn_id_list = [btn.id]
+  console.log(btn_id_list)
+  return btn_id_list;
+}
 // ==================================================
 // US03 - AFFICHER LES SÉANCES
 // ==================================================
